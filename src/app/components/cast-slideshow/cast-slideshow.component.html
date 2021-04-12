@@ -1,0 +1,18 @@
+<!-- Slider main container -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div *ngFor="let person of cast" class="swiper-slide" [ngStyle]="{
+            'background-size': 'cover',
+            'background-image': 'url(https://image.tmdb.org/t/p/w500'+ person.profile_path +')'
+        }">
+            <div class="movie-description">
+                <p class="mt-3 text-center">{{person.name}}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- If we need navigation buttons -->
+    <div (click)="onSlidePrev()" class="swiper-button-prev"></div>
+    <div (click)="onSlideNext()" class="swiper-button-next"></div>
+</div>
